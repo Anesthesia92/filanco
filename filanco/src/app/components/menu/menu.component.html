@@ -1,0 +1,32 @@
+<cdk-accordion class="accordion">
+  <cdk-accordion-item
+    *ngFor="let item of items; let index = index;"
+    #accordionItem="cdkAccordionItem"
+    class="accordion-item"
+    role="button"
+    tabindex="0"
+    [attr.id]="'accordion-header-' + index"
+    [attr.aria-expanded]="accordionItem.expanded"
+    [attr.aria-controls]="'accordion-body-' + index">
+    <div class="accordion-item__header" (click)="accordionItem.toggle()">
+         <span class="accordion-item__description">
+       {{ accordionItem.expanded ? 'close' : 'open' }}
+      </span>
+      {{ item }}
+    </div>
+    <div
+      class="accordion-item__body"
+      role="region"
+      [style.display]="accordionItem.expanded ? '' : 'none'"
+      [attr.id]="'accordion-body-' + index"
+      [attr.aria-labelledby]="'accordion-header-' + index">
+<ul  class="accordion-item__list">
+  <li>VDS/VPS</li>
+  <li>Домены / Почта </li>
+  <li>Сертификаты</li>
+  <li>Хостинг </li>
+  <li>Реклама и продвижение </li>
+</ul>
+    </div>
+  </cdk-accordion-item>
+</cdk-accordion>
