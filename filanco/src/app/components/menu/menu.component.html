@@ -9,10 +9,13 @@
     [attr.aria-expanded]="accordionItem.expanded"
     [attr.aria-controls]="'accordion-body-' + index">
     <div class="accordion-item__header" (click)="accordionItem.toggle()">
-         <span class="accordion-item__description">
-       {{ accordionItem.expanded ? 'close' : 'open' }}
-      </span>
+         <div class="accordion-item__description">
+           <img src="assets/img/plus_icon.png" alt="open" width="16" height="16" class="mat-icon" hideToggle>
+           <img src="assets/img/icon-up-arrow.png" alt="open" width="16" height="16" class="mat-icon">
+      </div>
+      <p class="menu-text">
       {{ item }}
+      </p>
     </div>
     <div
       class="accordion-item__body"
@@ -20,13 +23,13 @@
       [style.display]="accordionItem.expanded ? '' : 'none'"
       [attr.id]="'accordion-body-' + index"
       [attr.aria-labelledby]="'accordion-header-' + index">
-<ul  class="accordion-item__list">
-  <li>VDS/VPS</li>
-  <li>Домены / Почта </li>
-  <li>Сертификаты</li>
-  <li>Хостинг </li>
-  <li>Реклама и продвижение </li>
-</ul>
+      <ul class="accordion-item__list">
+        <li>VDS/VPS</li>
+        <li>Домены / Почта</li>
+        <li>Сертификаты</li>
+        <li>Хостинг</li>
+        <li>Реклама и продвижение</li>
+      </ul>
     </div>
   </cdk-accordion-item>
 </cdk-accordion>

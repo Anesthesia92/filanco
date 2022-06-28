@@ -9,6 +9,7 @@ import { TableComponent } from './components/table/table.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {CdkAccordionModule} from "@angular/cdk/accordion";
+import {MatIconModule} from "@angular/material/icon";
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {CdkAccordionModule} from "@angular/cdk/accordion";
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
-    CdkAccordionModule
+    CdkAccordionModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

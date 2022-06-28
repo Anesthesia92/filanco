@@ -7,6 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent {
 
+  public open: boolean | undefined;
   items = ['Заказать', 'Продлить/Изменить', 'Финансы', 'Управление'];
-  expandedIndex = 0;
 }

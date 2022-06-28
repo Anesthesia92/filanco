@@ -3,7 +3,7 @@
   width: 170px;
   &-item {
     display: block;
-    border: solid 1px #ccc;
+    border-bottom: solid 1px #ccc;
     &__list {
       padding: 0;
       li {
@@ -21,23 +21,22 @@
 .accordion-item__header {
   display: flex;
   align-content: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   text-transform: uppercase;
-  color: #ff8c5e;
+  color: #ff9a11;
   font-weight: bold;
   letter-spacing: 1px;
-  font-size: 16px;
   line-height: 40px;
-
+  align-items: center;
 }
 
 .accordion-item__description {
-  font-size: 0.85em;
   color: #999;
+  display: flex;
 }
 
 .accordion-item__header {
-  padding: 16px;
+  padding: 6px;
 }
 
 .accordion-item__body{
@@ -57,4 +56,8 @@
 .accordion-item:last-child {
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
+}
+.menu-text {
+  margin: 0;
+  padding-left: 10px;
 }
