@@ -33,6 +33,9 @@
 .accordion-item__description {
   color: #999;
   display: flex;
+  .icon-up-arrow {
+    display: none;
+  }
 }
 
 .accordion-item__header {
@@ -61,3 +64,14 @@
   margin: 0;
   padding-left: 10px;
 }
+
+.accordion-item__description.open {
+  .plus-icon {
+    display: none;
+  }
+  .icon-up-arrow {
+    display: flex;
+  }
+  transition-duration: 700ms;
+}
+
