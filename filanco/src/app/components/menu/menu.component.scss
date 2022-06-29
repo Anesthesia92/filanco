@@ -1,6 +1,7 @@
 .accordion {
   display: block;
   width: 170px;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
   &-item {
     display: block;
     border-bottom: solid 1px #ccc;
@@ -8,9 +9,12 @@
       padding: 0;
       li {
         list-style-type: none;
-        font-weight: 700;
+        font-weight: 500;
       }
     }
+  }
+  &-item:last-child {
+    border-bottom: 0;
   }
 }
 
@@ -24,7 +28,7 @@
   justify-content: flex-start;
   text-transform: uppercase;
   color: #ff9a11;
-  font-weight: bold;
+  font-weight: 600;
   letter-spacing: 1px;
   line-height: 40px;
   align-items: center;
