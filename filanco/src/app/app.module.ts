@@ -11,6 +11,10 @@ import {MatToolbarModule} from "@angular/material/toolbar";
 import {CdkAccordionModule} from "@angular/cdk/accordion";
 import {MatIconModule} from "@angular/material/icon";
 import {MatCardModule} from "@angular/material/card";
+import { CommentsComponent } from './components/comments/comments.component';
+import {MatButtonModule} from "@angular/material/button";
+import {FormsModule} from "@angular/forms";
+import {MatFormFieldModule} from "@angular/material/form-field";
 
 @NgModule({
   declarations: [
@@ -18,7 +22,8 @@ import {MatCardModule} from "@angular/material/card";
     MainComponent,
     HeaderComponent,
     MenuComponent,
-    TableComponent
+    TableComponent,
+    CommentsComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +32,10 @@ import {MatCardModule} from "@angular/material/card";
     MatToolbarModule,
     CdkAccordionModule,
     MatIconModule,
-    MatCardModule
+    MatCardModule,
+    MatButtonModule,
+    FormsModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent],

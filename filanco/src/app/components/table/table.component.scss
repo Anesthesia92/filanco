@@ -1,10 +1,12 @@
+$link: #507ff6;
+
 .table {
   display: flex;
   flex-direction: column;
   &-container {
     display: flex;
     flex-direction: column;
-    width: 800px;
+    max-width: 800px;
     border: 1px solid #ccc;
     &__header {
       display: flex;
@@ -73,7 +75,7 @@
   display: flex;
   .column {
     .domain {
-      color: #507ff6;
+      color: $link;
       text-decoration: underline;
       text-align: center;
     }

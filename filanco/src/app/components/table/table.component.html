@@ -39,7 +39,24 @@
         <p>10.89 Mb</p>
         <p>522.43 Mb</p>
         <p>141.7 Mb</p>
-        <p>Нет комментариев. <a class="link">(Изменить)</a></p>
+        <div class="comments">
+          <input [(ngModel)]="commentInput" type="text"
+                 class="custom-file-input">
+          <button
+            mat-button
+            *ngIf="commentInput"
+            matSuffix
+            mat-icon-button
+            color="primary"
+            class="icon-confirm"
+            (click)="onCommentTextEmit(item.id)">
+            <mat-icon>done</mat-icon>
+          </button>
+          {{commentInput}}
+          <div *ngFor="let comment of item.comments">
+            <app-comments [comment]="comment" (click)="onDeleteComment()"></app-comments>
+          </div><a class="link">(Изменить)</a>
+        </div>
         <p>Бета-SSD</p>
         <p>My Login</p>
         <p>host.ru</p>
