@@ -50,22 +50,33 @@ $border: 1px solid #ccc;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      .state {
+      p, .column {
+        margin: 0;
+        height: 62px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-left: 0;
+      }
+      .toolbar-cards {
+        .item-first, .item, .item-1 {
+          border-left: 0!important;
+        }
+      }
+      .state, .account {
         text-align: center;
+        border-right: $border;
       }
       .action {
         cursor: pointer;
       }
-      .account {
+      .account  {
         display: flex;
         font-weight: 700;
         justify-content: center;
         p:first-child {
           text-decoration: underline;
         }
-      }
-      p {
-        margin: 0;
       }
     }
   }
@@ -84,6 +95,7 @@ $border: 1px solid #ccc;
     .item-first {
       width: 85px;
       text-align: center;
+      border-left: 0;
     }
     .item, .item-1, .item-first {
       display: flex;
@@ -106,10 +118,16 @@ $border: 1px solid #ccc;
 
 .mat-card-content {
   display: flex;
-  .column-first {
+  padding: 0;
+  margin: 0;
+  border-top: $border;
+  .column-1 {
     text-align: right;
-    padding-right: 16px;
     font-weight: 700;
+    border-right: $border;
+  }
+  .column-2 {
+    padding-left: 5px;
   }
   p {
     margin: 3px;
@@ -117,24 +135,97 @@ $border: 1px solid #ccc;
 }
 .mat-card-actions {
   display: flex;
-  .column {
+  padding: 0;
+  margin: 0;
+  border-top: $border;
+  .action {
+    width: 180px;
+    border-right: $border;
     .domain {
       color: $link;
       text-decoration: underline;
       text-align: center;
     }
   }
+  .list {
+    padding-left: 10px;
+    color: $link;
+    font-weight: 500;
+    span {
+      padding-left: 15px;
+      color: black;
+      font-weight: 300;
+    }
+  }
 }
-
 .comments {
   display: flex;
   height: 20px;
   app-dialog {
     height: 0;
   }
-  &-link {
-    color: $link;
-    text-decoration: underline;
-    cursor: pointer;
+}
+.mat-card>.mat-card-actions:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.buttons {
+  display: flex;
+  p{
+    margin:  0;
   }
+  .app-dialog {
+    height: 20px;
+  }
+  .comments-add {
+    display: none;
+  }
+}
+.buttons.open {
+   .comments-add {
+     display: flex;
+   }
+  .comments-change {
+    display: none;
+  }
+ }
+.mat-expansion-panel {
+  width: 237px;
+  background-color: rgb(255, 254, 254, 0.5);
+  position: relative;
+}
+
+.example-list {
+  width: 250px;
+  border: solid 1px #ccc;
+  border-radius: 5px;
+  background: #fff;
+  text-align: center;
+  padding: 10px;
+  margin: 0;
+  cursor: pointer;
+}
+
+.example-list > li {
+  list-style-type: none;
+  border-bottom: solid 1px #8b8b8b;
+  padding: 8px 0;
+}
+
+.example-list > li:last-child {
+  border-bottom: none;
+}
+
+.button-add {
+  background-color: $link;
+  color: white;
+  border: $border;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.link {
+  color: $link;
+  text-decoration: underline;
+  cursor: pointer;
 }

@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {CardService} from "../../services/card.service";
 import {MatDialog} from "@angular/material/dialog";
 
@@ -14,11 +14,10 @@ export class TableComponent  {
   @Output() emitDeleteCard: EventEmitter<number> = new EventEmitter();
   @Output() emitText: EventEmitter<any> = new EventEmitter();
   commentInput = '';
+  open: boolean = false;
+  isOpen = false;
 
   constructor(public cardService: CardService, public dialog: MatDialog) { }
-
-  ngOnInit(): void {
-  }
 
   public onCommentTextEmit(text: string) {
     this.cardService.addComment(text);
@@ -26,12 +25,16 @@ export class TableComponent  {
     this.commentInput = '';
   }
 
-  addComment(text: string) {
+  public addComment(text: string) {
     this.cardService.addComment(text);
   }
 
   public onDeleteComment(commentId: number) {
     this.cardService.deleteComment(commentId)
+  }
+
+  public onChangeComments() {
+    this.open = true;
   }
 
 }

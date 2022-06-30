@@ -13,7 +13,7 @@ export class CardService {
       comments: [
         {
           id: 1,
-          text: '',
+          text: 'Комментарий для примера',
         },
       ]
     },

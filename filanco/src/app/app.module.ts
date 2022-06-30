@@ -19,6 +19,9 @@ import {DialogBodyComponent} from "./components/dialog/dialog-body/dialog-body.c
 import {DialogOverviewComponent} from "./components/dialog/dialog-overview.component";
 import {MatDialogModule} from "@angular/material/dialog";
 import {MatInputModule} from "@angular/material/input";
+import {MatExpansionModule} from "@angular/material/expansion";
+import {MatMenuModule} from "@angular/material/menu";
+import {OverlayModule} from "@angular/cdk/overlay";
 
 @NgModule({
   declarations: [
@@ -43,7 +46,10 @@ import {MatInputModule} from "@angular/material/input";
     FormsModule,
     MatFormFieldModule,
     MatDialogModule,
-    MatInputModule
+    MatInputModule,
+    MatExpansionModule,
+    MatMenuModule,
+    OverlayModule
   ],
   providers: [],
   bootstrap: [AppComponent],

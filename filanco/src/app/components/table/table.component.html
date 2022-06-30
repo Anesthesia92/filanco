@@ -2,26 +2,30 @@
   <h1>Аккаунты хостинга</h1>
   <mat-card class="table-container">
     <div class="table-container__header">
-  <div class="column account"><p>Аккаунт</p></div>
+      <div class="column account"><p>Аккаунт</p></div>
       <div class="column"><p class="statistic">Статистика</p>
-      <div class="column column-cards">
-        <p class="item-first">Занято/<br>Всего (Mb)</p>
-        <p class="item">Cron</p>
-        <p class="item-1">MySQL</p>
-        <p class="item">FTP</p>
-      </div>
+        <div class="column column-cards">
+          <p class="item-first">Занято/<br>Всего (Mb)</p>
+          <p class="item">Cron</p>
+          <p class="item-1">MySQL</p>
+          <p class="item">FTP</p>
+        </div>
       </div>
       <div class="column state"><p>Состояние</p></div>
       <div class="column action"><p>Действия</p></div>
     </div>
     <div class="table-container__toolbar">
-      <div class="column account"><p>srv164042</p><p>(Бета-SSD) </p></div>
-      <div class="column column-cards"><p class="item-first">675/700</p><p class="item">0</p> <p class="item-1">1</p> <p class="item">0</p></div>
+      <div class="column account"><p>srv164042</p>
+        <p>(Бета-SSD) </p></div>
+      <div class="column column-cards toolbar-cards"><p class="item-first">675/700</p>
+        <p class="item">0</p>
+        <p class="item-1">1</p>
+        <p class="item">0</p></div>
       <div class="column state"><a>Включен </a></div>
       <div class="column action"><img src="assets/img/icons.png" alt="icons"></div>
     </div>
     <mat-card-content>
-      <div class="column account column-first">
+      <div class="column account column-1">
         <p>IP-адрес</p>
         <p>Объем баз данных</p>
         <p>Объем почты</p>
@@ -34,23 +38,40 @@
         <p>Имя хоста MySQL</p>
         <p>Имя хоста PgSQL</p>
       </div>
-      <div class="column">
+      <div class="column column-2">
         <p>31.28.24.122</p>
         <p>10.89 Mb</p>
         <p>522.43 Mb</p>
         <p>141.7 Mb</p>
         <div class="comments" *ngFor="let comments of cardService.getBoard$() | async">
-          <app-dialog (emitText)="addComment($event)">
-            <a class="comments-link">Изменить</a>
-          </app-dialog>
-        <app-comments *ngFor="let comment of comments.comments"
-        [comment]="comment">
-        </app-comments>
+          <mat-icon> comment</mat-icon>
+          <div class="buttons" (click)="onChangeComments()" [ngClass]="{ open: open }">
+            <p  class="comments-change"> Комментариев пока нет</p>
+            <a class="comments-link comments-change link"> (Изменить)</a>
+            <app-dialog (emitText)="addComment($event)">
+              <a class="comments-link comments-add link"><mat-icon> add_comment</mat-icon></a>
+            </app-dialog>
+            <button (click)="isOpen = !isOpen" type="button" cdkOverlayOrigin #trigger="cdkOverlayOrigin"
+                    class="comments-add button-add button">
+              {{isOpen ? "Закрыть комменты" : "Открыть комменты"}}
+            </button>
+            <ng-template
+              cdkConnectedOverlay
+              [cdkConnectedOverlayOrigin]="trigger"
+              [cdkConnectedOverlayOpen]="isOpen">
+              <ul class="example-list">
+                <app-comments *ngFor="let comment of comments.comments"
+                              [comment]="comment"
+          (click)="onDeleteComment(comment.id)">
+                </app-comments>
+              </ul>
+            </ng-template>
+          </div>
         </div>
         <p>Бета-SSD</p>
         <p>My Login</p>
         <p>host.ru</p>
-        <p>скрыт <a class="link">(Изменить)</a><a class="link"> (Выключить)</a></p>
+        <p>скрыт <a class="link">(Изменить)</a><a class="link">(Выключить)</a></p>
         <p>host.ru</p>
         <p>host.ru</p>
       </div>
@@ -59,18 +80,18 @@
       <div class="column action">
         <p class="domain">Привязанные домены</p>
       </div>
-      <div class="column">
-   <div class="column-link">
-     <p>shoku-yoku.ru</p>
-     <p> <span>www.shoku-yoku.ru</span></p>
-   </div>
+      <div class="column list">
+        <div class="column-link">
+          <p>shoku-yoku.ru</p>
+          <p class="column-link__item"><span>www.shoku-yoku.ru</span></p>
+        </div>
         <div class="column-link">
           <p>srv164042.hoster-test.ru</p>
-          <p> <span>www.srv164042.hoster-test.ru (alias)</span></p>
+          <p class="column-link__item"><span>www.srv164042.hoster-test.ru (alias)</span></p>
         </div>
         <div class="column-link">
           <p>сёкуёку.рф</p>
-          <p> <span>www.сёкуёку.рф (alias)</span></p>
+          <p class="column-link__item"><span>www.сёкуёку.рф (alias)</span></p>
         </div>
       </div>
     </mat-card-actions>
