@@ -1,24 +1,55 @@
 $link: #507ff6;
+$grey: #ccc;
+$border: 1px solid #ccc;
 
 .table {
   display: flex;
   flex-direction: column;
+  h1 {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 19px;
+    letter-spacing: 1px;
+  }
   &-container {
     display: flex;
     flex-direction: column;
     max-width: 800px;
     border: 1px solid #ccc;
+    padding: 0;
     &__header {
       display: flex;
       width: 100%;
       justify-content: space-around;
+      align-items: center;
+      height: 70px;
+      background-color: #96b1c5;
+      color: white;
+      p {
+        margin: 0;
+        height: inherit;
+      }
       .column {
         text-align: center;
+        height: inherit;
+        border-right: $border;
+        p {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      .statistic {
+          height: 33px;
+        }
+      }
+      .column-cards {
+        height: 35px;
       }
     }
     &__toolbar {
       display: flex;
       justify-content: space-between;
+      align-items: center;
       .state {
         text-align: center;
       }
@@ -28,9 +59,13 @@ $link: #507ff6;
       .account {
         display: flex;
         font-weight: 700;
+        justify-content: center;
         p:first-child {
           text-decoration: underline;
         }
+      }
+      p {
+        margin: 0;
       }
     }
   }
@@ -39,17 +74,23 @@ $link: #507ff6;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    line-height: 14px;
     .item {
       width: 45px;
-      text-align: center;
     }
     .item-1 {
       width: 58px;
-      text-align: center;
     }
     .item-first {
       width: 85px;
       text-align: center;
+    }
+    .item, .item-1, .item-first {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid $grey;
+      border-bottom: 0;
     }
   }
   .account {
@@ -70,6 +111,9 @@ $link: #507ff6;
     padding-right: 16px;
     font-weight: 700;
   }
+  p {
+    margin: 3px;
+  }
 }
 .mat-card-actions {
   display: flex;
@@ -79,5 +123,18 @@ $link: #507ff6;
       text-decoration: underline;
       text-align: center;
     }
+  }
+}
+
+.comments {
+  display: flex;
+  height: 20px;
+  app-dialog {
+    height: 0;
+  }
+  &-link {
+    color: $link;
+    text-decoration: underline;
+    cursor: pointer;
   }
 }

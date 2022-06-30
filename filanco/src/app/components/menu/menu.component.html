@@ -10,8 +10,8 @@
     [attr.aria-controls]="'accordion-body-' + index">
     <div class="accordion-item__header" (click)="accordionItem.toggle()">
          <div class="accordion-item__description" [ngClass]="accordionItem.expanded ? 'open' : 'close' + index">
-           <img src="assets/img/plus_icon.png" alt="open" width="16" height="16" class="mat-icon plus-icon">
-           <img src="assets/img/icon-up-arrow.png" alt="open" width="16" height="16" class="mat-icon icon-up-arrow">
+           <img src="assets/img/plus_icon.png" alt="open" class="mat-icon plus-icon">
+           <img src="assets/img/icon-up-arrow.png" alt="close" class="mat-icon icon-up-arrow">
       </div>
       <p class="menu-text">
       {{ item }}

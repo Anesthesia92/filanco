@@ -1,0 +1,22 @@
+.dialog-content {
+  overflow: hidden;
+  height: 100%;
+}
+
+mat-toolbar {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 5px;
+}
+
+.text-editor {
+  width: 620px;
+}
+
+.color-picker {
+  width: 310px;
+  height: 410px;
+  cursor: pointer;
+}

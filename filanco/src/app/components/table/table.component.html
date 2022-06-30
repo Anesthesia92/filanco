@@ -5,7 +5,7 @@
   <div class="column account"><p>Аккаунт</p></div>
       <div class="column"><p class="statistic">Статистика</p>
       <div class="column column-cards">
-        <p class="item-first">Занято/<br>всего (Mb)</p>
+        <p class="item-first">Занято/<br>Всего (Mb)</p>
         <p class="item">Cron</p>
         <p class="item-1">MySQL</p>
         <p class="item">FTP</p>
@@ -16,7 +16,7 @@
     </div>
     <div class="table-container__toolbar">
       <div class="column account"><p>srv164042</p><p>(Бета-SSD) </p></div>
-      <div class="column column-cards"><p class="item-first">675.01 / <br>700</p><p class="item">0</p> <p class="item-1">1</p> <p class="item">0</p></div>
+      <div class="column column-cards"><p class="item-first">675/700</p><p class="item">0</p> <p class="item-1">1</p> <p class="item">0</p></div>
       <div class="column state"><a>Включен </a></div>
       <div class="column action"><img src="assets/img/icons.png" alt="icons"></div>
     </div>
@@ -39,23 +39,13 @@
         <p>10.89 Mb</p>
         <p>522.43 Mb</p>
         <p>141.7 Mb</p>
-        <div class="comments">
-          <input [(ngModel)]="commentInput" type="text"
-                 class="custom-file-input">
-          <button
-            mat-button
-            *ngIf="commentInput"
-            matSuffix
-            mat-icon-button
-            color="primary"
-            class="icon-confirm"
-            (click)="onCommentTextEmit(item.id)">
-            <mat-icon>done</mat-icon>
-          </button>
-          {{commentInput}}
-          <div *ngFor="let comment of item.comments">
-            <app-comments [comment]="comment" (click)="onDeleteComment()"></app-comments>
-          </div><a class="link">(Изменить)</a>
+        <div class="comments" *ngFor="let comments of cardService.getBoard$() | async">
+          <app-dialog (emitText)="addComment($event)">
+            <a class="comments-link">Изменить</a>
+          </app-dialog>
+        <app-comments *ngFor="let comment of comments.comments"
+        [comment]="comment">
+        </app-comments>
         </div>
         <p>Бета-SSD</p>
         <p>My Login</p>

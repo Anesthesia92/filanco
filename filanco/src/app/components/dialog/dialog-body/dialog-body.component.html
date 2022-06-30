@@ -1,0 +1,10 @@
+<div mat-dialog-content class="dialog-content">
+  <mat-toolbar>
+    <mat-label>Add Comment</mat-label>
+  <input matInput class="text-editor" [(ngModel)]="data.text">
+  </mat-toolbar>
+<div mat-dialog-actions>
+  <button mat-raised-button [mat-dialog-close]="[data.text]" cdkFocusInitial color="primary">Confirm</button>
+  <button mat-button (click)="close()">Cancel</button>
+</div>
+</div>
