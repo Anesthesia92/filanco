@@ -83,3 +83,9 @@
   width: 16px;
   height: 16px;
 }
+
+@media (max-width: 1200px) {
+    .accordion-item {
+      display: flex;
+  }
+}

@@ -2,37 +2,46 @@
   background-color: #5f5f5f;
   height: 20px;
   padding: 0;
+  width: 100%;
+  overflow: hidden;
   &-container {
     margin: 0 auto;
     width: 1200px;
     display: flex;
     justify-content: space-between;
     padding: 10px;
+
     p {
       font-size: 14px;
       margin: 0;
       padding-left: 7px;
     }
+
     .program {
       text-transform: uppercase;
     }
+
     &__item {
       display: flex;
       align-items: center;
     }
+
     &__item:first-child {
       color: #cacaca;
       text-transform: uppercase;
     }
+
     .main {
       .mat-icon {
         height: 20px;
         color: #ff9a11;
       }
+
       .green {
         color: #ccff00;
       }
     }
+
     &__item:nth-child(3) {
       .comment, .number {
         color: #cacaca;
@@ -40,22 +49,27 @@
       width: 403px;
       justify-content: space-between;
     }
+
     &__item:last-child {
       .icon {
         width: 50px;
         display: flex;
         align-items: center;
         justify-content: center;
+
         .mat-icon {
           height: 20px;
         }
+
         .grey {
           color: #cacaca;
         }
+
         .red {
           color: red;
         }
       }
+
       p {
         font-size: 16px;
         color: #ff9a11;
@@ -67,8 +81,22 @@
     color: #ff9a11;
   }
 }
+
 .mat-icon {
   height: 16px;
   width: auto;
   cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+  p {
+    font-size: 12px!important;
+    padding: 3px!important;
+  }
+  .item-3 {
+    max-width: 330px!important;
+  }
+  .icon {
+    width: 30px!important;
+  }
 }
