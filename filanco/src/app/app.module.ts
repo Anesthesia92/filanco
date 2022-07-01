@@ -22,6 +22,7 @@ import {MatInputModule} from "@angular/material/input";
 import {MatExpansionModule} from "@angular/material/expansion";
 import {MatMenuModule} from "@angular/material/menu";
 import {OverlayModule} from "@angular/cdk/overlay";
+import { AsideComponent } from './components/aside/aside.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import {OverlayModule} from "@angular/cdk/overlay";
     TableComponent,
     CommentsComponent,
     DialogBodyComponent,
-    DialogOverviewComponent
+    DialogOverviewComponent,
+    AsideComponent
   ],
   imports: [
     BrowserModule,

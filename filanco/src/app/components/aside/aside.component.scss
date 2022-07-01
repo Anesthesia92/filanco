@@ -1,0 +1,27 @@
+.aside-container {
+  border-top: 1px solid #ccc;
+  margin-top: 50px;
+  &__header {
+    text-transform: uppercase;
+  }
+  .icon {
+    display: flex;
+    font-size: 12px;
+    span {
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        height: 17px;
+        width: auto;
+      }
+    }
+    p {
+      padding-left: 10px;
+      margin: 0;
+    }
+  }
+}
+
