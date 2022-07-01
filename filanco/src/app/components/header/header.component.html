@@ -1,9 +1,30 @@
 <mat-toolbar class="header">
   <div class="header-container">
-    <p>Главная</p>
-    <p>Партнерская программа</p>
-    <p>Д174181</p>
-    <p>Имя Фамилия</p>
-    <p>Основной л/с:</p>
+    <div class="header-container__item">
+      <img src="assets/img/left-arrow.png" alt="left-arrow" class="mat-icon">
+      <p>Главная</p>
+    </div>
+    <p class="orange program">Партнерская программа</p>
+    <div class="header-container__item">
+      <p class="number">  <mat-icon class="comment"> comment</mat-icon> Д174181</p>
+      <p class="orange">Имя Фамилия</p>
+      <div class="main">
+        <p class="green">        <mat-icon> money</mat-icon> Основной л/с: 204 руб</p>
+      </div>
+    </div>
+    <div class="header-container__item">
+      <div class="icon">
+        <mat-icon class="grey"> mail_outline</mat-icon> <p>0</p>
+      </div>
+      <div class="icon">
+        <mat-icon class="red">markunread_mailbox</mat-icon> <p>0</p>
+      </div>
+      <div class="icon">
+        <img src="assets/img/right-arrow.png" alt="right-arrow" class="mat-icon">
+      </div>
+      <div class="exit">
+        <img src="assets/img/icon-10.png" alt="exit" class="mat-icon">
+      </div>
+    </div>
   </div>
 </mat-toolbar>
