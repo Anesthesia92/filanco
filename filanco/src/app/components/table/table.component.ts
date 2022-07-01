@@ -7,7 +7,7 @@ import {MatDialog} from "@angular/material/dialog";
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.scss']
 })
-export class TableComponent  {
+export class TableComponent {
 
   @Input() item: any;
   @Input() column: any;
@@ -17,7 +17,8 @@ export class TableComponent  {
   open: boolean = false;
   isOpen = false;
 
-  constructor(public cardService: CardService, public dialog: MatDialog) { }
+  constructor(public cardService: CardService, public dialog: MatDialog) {
+  }
 
   public onCommentTextEmit(text: string) {
     this.cardService.addComment(text);
@@ -35,6 +36,10 @@ export class TableComponent  {
 
   public onChangeComments() {
     this.open = true;
+  }
+
+  public onDeleteDomain(domainId: number) {
+    this.cardService.deleteDomain(domainId)
   }
 
 }

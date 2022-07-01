@@ -44,12 +44,14 @@
         <p>522.43 Mb</p>
         <p>141.7 Mb</p>
         <div class="comments" *ngFor="let comments of cardService.getBoard$() | async">
-          <mat-icon> comment</mat-icon>
+          <mat-icon class="comment"> comment</mat-icon>
           <div class="buttons" (click)="onChangeComments()" [ngClass]="{ open: open }">
-            <p  class="comments-change"> Комментариев пока нет</p>
+            <p class="comments-change"> Комментариев пока нет</p>
             <a class="comments-link comments-change link"> (Изменить)</a>
             <app-dialog (emitText)="addComment($event)">
-              <a class="comments-link comments-add link"><mat-icon> add_comment</mat-icon></a>
+              <a class="comments-link comments-add link">
+                <mat-icon> add_comment</mat-icon>
+              </a>
             </app-dialog>
             <button (click)="isOpen = !isOpen" type="button" cdkOverlayOrigin #trigger="cdkOverlayOrigin"
                     class="comments-add button-add button">
@@ -62,7 +64,7 @@
               <ul class="example-list">
                 <app-comments *ngFor="let comment of comments.comments"
                               [comment]="comment"
-          (click)="onDeleteComment(comment.id)">
+                              (click)="onDeleteComment(comment.id)">
                 </app-comments>
               </ul>
             </ng-template>
@@ -80,18 +82,14 @@
       <div class="column action">
         <p class="domain">Привязанные домены</p>
       </div>
-      <div class="column list">
-        <div class="column-link">
-          <p>shoku-yoku.ru</p>
-          <p class="column-link__item"><span>www.shoku-yoku.ru</span></p>
-        </div>
-        <div class="column-link">
-          <p>srv164042.hoster-test.ru</p>
-          <p class="column-link__item"><span>www.srv164042.hoster-test.ru (alias)</span></p>
-        </div>
-        <div class="column-link">
-          <p>сёкуёку.рф</p>
-          <p class="column-link__item"><span>www.сёкуёку.рф (alias)</span></p>
+      <div class="domains-list">
+        <div class="column list" *ngFor="let links of cardService.getDomains$() | async; let index = index;">
+          <div class="column-link">
+            <p>{{links.text}}</p>
+            <p class="column-link__item"><span>{{links.link}}</span>
+              <mat-icon class="cancel-icon" (click)="onDeleteDomain(links.id)">cancel</mat-icon>
+            </p>
+          </div>
         </div>
       </div>
     </mat-card-actions>

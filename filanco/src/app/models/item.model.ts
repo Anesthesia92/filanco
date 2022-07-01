@@ -3,10 +3,6 @@ export interface Comments {
   text: string;
 }
 
-export interface Domains {
-  comments: Domain[];
-}
-
 export interface Comment {
   id: number;
   text: string;
@@ -15,4 +11,5 @@ export interface Comment {
 export interface Domain {
   id: number;
   text: string;
+  link: string
 }
